@@ -1,6 +1,6 @@
 included:
   - Packages
-  - weather_dvt
+  - weather_swift
 
 disabled_rules:
   - line_length

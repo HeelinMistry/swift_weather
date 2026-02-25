@@ -275,7 +275,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/.swiftlint.yml",
-				"$(SRCROOT)/weather_dvt",
+				"$(SRCROOT)/weather_swift",
 			);
 			name = "Run Swiftlint Script";
 			outputFileListPaths = (
