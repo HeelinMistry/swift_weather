@@ -65,7 +65,6 @@ final class WeatherViewModelTests: XCTestCase {
     }
 
     func testLoadCurrentWeatherFailure() async {
-        mockFavRepo.result = .success([])
         let errorMessage = "Not Found"
         let networkError = NSError(
             domain: "Network",
@@ -73,6 +72,7 @@ final class WeatherViewModelTests: XCTestCase {
             userInfo: [NSLocalizedDescriptionKey: errorMessage]
         )
         mockUseCase.result = .failure(networkError)
+        mockFavRepo.result = .success([])
 
         let expectation = XCTestExpectation(description: "ViewModel should transition to error state")
         var cancellables = Set<AnyCancellable>()

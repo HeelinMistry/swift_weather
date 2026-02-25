@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F3B2F2B42F46059900553804"
-               BuildableName = "weather_dvt.app"
-               BlueprintName = "weather_dvt"
-               ReferencedContainer = "container:weather_dvt.xcodeproj">
+               BuildableName = "weather_swift.app"
+               BlueprintName = "weather_swift"
+               ReferencedContainer = "container:weather_swift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -30,33 +30,10 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:weather_dvt.xctestplan"
+            reference = "container:weather_swift.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
-      <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F3B2F2C32F46059A00553804"
-               BuildableName = "weather_dvtTests.xctest"
-               BlueprintName = "weather_dvtTests"
-               ReferencedContainer = "container:weather_dvt.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "YES"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F3B2F2CD2F46059A00553804"
-               BuildableName = "weather_dvtUITests.xctest"
-               BlueprintName = "weather_dvtUITests"
-               ReferencedContainer = "container:weather_dvt.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -73,9 +50,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F3B2F2B42F46059900553804"
-            BuildableName = "weather_dvt.app"
-            BlueprintName = "weather_dvt"
-            ReferencedContainer = "container:weather_dvt.xcodeproj">
+            BuildableName = "weather_swift.app"
+            BlueprintName = "weather_swift"
+            ReferencedContainer = "container:weather_swift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -90,9 +67,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F3B2F2B42F46059900553804"
-            BuildableName = "weather_dvt.app"
-            BlueprintName = "weather_dvt"
-            ReferencedContainer = "container:weather_dvt.xcodeproj">
+            BuildableName = "weather_swift.app"
+            BlueprintName = "weather_swift"
+            ReferencedContainer = "container:weather_swift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -11,7 +11,7 @@ import WeatherCore
 import WeatherUI
 
 @main
-struct WeatherDvtApp: App {
+struct WeatherSwiftApp: App {
     let container = DependencyContainer()
     
     var body: some Scene {
