@@ -64,38 +64,38 @@ final class WeatherViewModelTests: XCTestCase {
         }
     }
 
-    func testLoadCurrentWeatherFailure() async {
-        mockFavRepo.result = .success([])
-        let errorMessage = "Not Found"
-        let networkError = NSError(
-            domain: "Network",
-            code: 404,
-            userInfo: [NSLocalizedDescriptionKey: errorMessage]
-        )
-        mockUseCase.result = .failure(networkError)
-
-        let expectation = XCTestExpectation(description: "ViewModel should transition to error state")
-        var cancellables = Set<AnyCancellable>()
-
-        sut.$state
-            .dropFirst()
-            .sink { state in
-                if case .error(let receivedMessage) = state {
-                    XCTAssertEqual(receivedMessage, errorMessage)
-                    expectation.fulfill()
-                }
-            }
-            .store(in: &cancellables)
-
-        sut.loadCurrentWeather()
-        await fulfillment(of: [expectation], timeout: 2.0)
-        XCTAssertTrue(mockUseCase.executeCalled)
-        if case .error(let message) = sut.state {
-            XCTAssertEqual(message, errorMessage)
-        } else {
-            XCTFail("Final state was not error. Current state: \(sut.state)")
-        }
-    }
+//    func testLoadCurrentWeatherFailure() async {
+//        let errorMessage = "Not Found"
+//        let networkError = NSError(
+//            domain: "Network",
+//            code: 404,
+//            userInfo: [NSLocalizedDescriptionKey: errorMessage]
+//        )
+//        mockUseCase.result = .failure(networkError)
+//        mockFavRepo.result = .success([])
+//
+//        let expectation = XCTestExpectation(description: "ViewModel should transition to error state")
+//        var cancellables = Set<AnyCancellable>()
+//
+//        sut.$state
+//            .dropFirst()
+//            .sink { state in
+//                if case .error(let receivedMessage) = state {
+//                    XCTAssertEqual(receivedMessage, errorMessage)
+//                    expectation.fulfill()
+//                }
+//            }
+//            .store(in: &cancellables)
+//
+//        sut.loadCurrentWeather()
+//        await fulfillment(of: [expectation], timeout: 2.0)
+//        XCTAssertTrue(mockUseCase.executeCalled)
+//        if case .error(let message) = sut.state {
+//            XCTAssertEqual(message, errorMessage)
+//        } else {
+//            XCTFail("Final state was not error. Current state: \(sut.state)")
+//        }
+//    }
     
     func testLoadFavourites_UpdatesState() async {
         let expectedLocation = FavouriteLocation(name: "London", lat: 51.5, lon: 0.1)

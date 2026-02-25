@@ -1,0 +1,67 @@
+{
+  "configurations" : [
+    {
+      "id" : "4A1332E6-74BD-41B1-B944-86BF4E8C0B1D",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:Packages\/WeatherCommon",
+          "identifier" : "WeatherCommon",
+          "name" : "WeatherCommon"
+        },
+        {
+          "containerPath" : "container:Packages\/WeatherCore",
+          "identifier" : "WeatherCore",
+          "name" : "WeatherCore"
+        },
+        {
+          "containerPath" : "container:Packages\/WeatherData",
+          "identifier" : "WeatherData",
+          "name" : "WeatherData"
+        },
+        {
+          "containerPath" : "container:Packages\/WeatherUI",
+          "identifier" : "WeatherUI",
+          "name" : "WeatherUI"
+        }
+      ]
+    },
+    "performanceAntipatternCheckerEnabled" : true,
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:weather_swift.xcodeproj",
+      "identifier" : "F3B2F2B42F46059900553804",
+      "name" : "weather_swift"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/WeatherUI",
+        "identifier" : "WeatherUITests",
+        "name" : "WeatherUITests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/WeatherCore",
+        "identifier" : "WeatherCoreTests",
+        "name" : "WeatherCoreTests"
+      }
+    },
+    {
+      "target" : {
+        "containerPath" : "container:Packages\/WeatherData",
+        "identifier" : "WeatherDataTests",
+        "name" : "WeatherDataTests"
+      }
+    }
+  ],
+  "version" : 1
+}
