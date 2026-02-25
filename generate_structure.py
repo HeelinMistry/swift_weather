@@ -27,9 +27,9 @@ def generate_tree(start_dir, exclude_dirs):
     return "\n".join(tree)
 
 # Configuration remains the same
-exclude = ['DerivedData', 'Pods', 'build', '.xcresult', 'node_modules', 'weather_dvt.xcodeproj', 'docs', 'Assets.xcassets']
-# Make sure 'weather_dvt' is the correct relative path from where the script runs
-structure = generate_tree('weather_dvt', exclude)
+exclude = ['DerivedData', 'Pods', 'build', '.xcresult', 'node_modules', 'weather_swift.xcodeproj', 'docs', 'Assets.xcassets']
+# Make sure 'weather_swift' is the correct relative path from where the script runs
+structure = generate_tree('weather_swift', exclude)
 
 # Read existing README from the root
 try:
