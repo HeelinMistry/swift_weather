@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
   pull_request:
     branches:
       - main
@@ -12,76 +11,56 @@ on:
 jobs:
   run-tests:
     runs-on: macos-latest
-
+  
+    permissions:
+      pull-requests: write
+      contents: read
     timeout-minutes: 30
 
     steps:
-      # ---------------------------------------
-      # Checkout
-      # ---------------------------------------
       - name: 🛎️ Checkout Repository
         uses: actions/checkout@v4
 
-      # ---------------------------------------
-      # Show Xcode Version (Debug)
-      # ---------------------------------------
       - name: 🛠️ Show Xcode Version
         run: xcodebuild -version
 
-      # ---------------------------------------
-      # Install Dependencies
-      # ---------------------------------------
       - name: 💎 Install Ruby Gems (xcov)
-        run: |
-          sudo gem install xcov
+        run: sudo gem install xcov
 
-      # ---------------------------------------
-      # Run Tests with Coverage
-      # ---------------------------------------
       - name: 🏃 Run Unit Tests
-        working-directory: weather_dvt
+        working-directory: weather_swift
         run: |
           set -o pipefail
-
           xcodebuild test \
-            -scheme weather_dvt \
+            -scheme weather_swift \
             -destination 'platform=iOS Simulator,name=iPhone 16' \
             -enableCodeCoverage YES \
             -derivedDataPath ./DerivedData \
             | xcpretty
 
-      # ---------------------------------------
-      # Generate Coverage Report (Fail < 80%)
-      # ---------------------------------------
       - name: 📝 Generate Coverage Report
         id: coverage
-        working-directory: weather_dvt
+        working-directory: weather_swift
         run: |
           xcov \
-            -p weather_dvt.xcodeproj \
+            -p weather_swift.xcodeproj \
             --derived_data_path ./DerivedData \
-            --scheme weather_dvt \
+            --scheme weather_swift \
             --output_directory ./xcov_output \
-            --exclude_targets "WeatherUITests,weather_dvt.app" \
+            --exclude_targets "WeatherUITests,weather_swift.app" \
             --minimum_coverage 80 \
             --markdown_report
 
-      # ---------------------------------------
-      # Upload HTML Report
-      # ---------------------------------------
       - name: 📦 Upload Coverage Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: CodeCoverageReport
-          path: weather_dvt/xcov_output
+          path: weather_swift/xcov_output
           retention-days: 7
 
-      # ---------------------------------------
-      # Comment Coverage on PR (Optional)
-      # ---------------------------------------
       - name: 💬 Post Coverage Comment
         if: github.event_name == 'pull_request'
         uses: marocchino/sticky-pull-request-comment@v2
         with:
-          path: weather_dvt/xcov_output/report.md
+          path: weather_swift/xcov_output/report.md
