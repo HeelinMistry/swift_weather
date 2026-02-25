@@ -1,7 +1,3 @@
-//
-//  weather_dvtApp.swift
-//  weather_dvt
-//
 //  Created by Heelin Mistry on 2026/02/18.
 //
 
