@@ -9,7 +9,30 @@
     }
   ],
   "defaultOptions" : {
-    "codeCoverage" : false,
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:Packages\/WeatherCommon",
+          "identifier" : "WeatherCommon",
+          "name" : "WeatherCommon"
+        },
+        {
+          "containerPath" : "container:Packages\/WeatherCore",
+          "identifier" : "WeatherCore",
+          "name" : "WeatherCore"
+        },
+        {
+          "containerPath" : "container:Packages\/WeatherData",
+          "identifier" : "WeatherData",
+          "name" : "WeatherData"
+        },
+        {
+          "containerPath" : "container:Packages\/WeatherUI",
+          "identifier" : "WeatherUI",
+          "name" : "WeatherUI"
+        }
+      ]
+    },
     "performanceAntipatternCheckerEnabled" : true,
     "targetForVariableExpansion" : {
       "containerPath" : "container:weather_swift.xcodeproj",
