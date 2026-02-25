@@ -81,11 +81,11 @@ jobs:
           git commit -m "chore: auto-update readme structure" || echo "No changes to commit"
           git push
 
-       # 4. Deploy to GitHub Pages
-       - name: Upload artifact
-         uses: actions/upload-pages-artifact@v3
-         with:
-           path: './weather_dvt/docs'
+      # 4. Deploy to GitHub Pages
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './weather_dvt/docs'
 
-       - name: Deploy to GitHub Pages
-         uses: actions/deploy-pages@v4
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
